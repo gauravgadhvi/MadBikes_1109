@@ -27,12 +27,12 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         case R.id.submit:
             EditText et_phone = (EditText) findViewById(R.id.Pnumber);
             et_phone.setInputType(InputType.TYPE_CLASS_PHONE);
-            EditText et_email = (EditText) findViewById(R.id.email);
-            et_email.setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
+            EditText et_username = (EditText) findViewById(R.id.email);
+            et_username.setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
             EditText et_address = (EditText) findViewById(R.id.address);
             et_address.setInputType(InputType.TYPE_CLASS_TEXT);
-            EditText et_username =(EditText) findViewById(R.id.Name);
-            et_username.setInputType(InputType.TYPE_CLASS_TEXT);
+            EditText et_name =(EditText) findViewById(R.id.Name);
+            et_name.setInputType(InputType.TYPE_CLASS_TEXT);
             EditText et_password = (EditText) findViewById(R.id.sign_up_pass);
             et_password.setInputType(InputType.TYPE_CLASS_TEXT);
 
@@ -52,8 +52,8 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                 Toast.makeText(SignUp.this,"table created", Toast.LENGTH_LONG).show();
 
 
-            String sql = "INSERT or replace INTO USERS(USERNAME, ADDRESS, NAME, PASSWORD, PHONE) VALUES('+et_username+','+et_address+',"
-                    +"'+et_name+','+et_password+','+et_phone+');";
+            String sql = "INSERT or replace INTO USERS(USERNAME, ADDRESS, NAME, PASSWORD, PHONE) VALUES('"+et_username+"','"+et_address+"',"
+                    +"'"+et_name +"','"+et_password+"','"+et_phone+"');";
             db.execSQL(sql);
             }
             catch (Exception e){
